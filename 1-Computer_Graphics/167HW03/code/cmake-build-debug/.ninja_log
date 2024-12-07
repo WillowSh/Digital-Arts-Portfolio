@@ -1,0 +1,8 @@
+# ninja log v5
+2	3789	1697224895720743047	CMakeFiles/balboa_lib.dir/src/hw1_scenes.cpp.o	d2b88d90419fa12d
+1	1088	1697224893019603870	CMakeFiles/balboa_lib.dir/src/3rdparty/glad.c.o	5425e709e6cdfb41
+3	4005	1697224895936867011	CMakeFiles/balboa_lib.dir/src/hw3_scenes.cpp.o	2868cfc4b388c7f3
+2	1309	1697224893241395572	CMakeFiles/balboa_lib.dir/src/hw2.cpp.o	2649ff31436699c5
+2	2402	1697224894334618689	CMakeFiles/balboa_lib.dir/src/3rdparty/tinyply.cpp.o	e8ff986f002a5861
+2	3981	1697224895912883862	CMakeFiles/balboa_lib.dir/src/hw2_scenes.cpp.o	b8fe5d09210eac79
+3	1194	1697224893126306740	CMakeFiles/balboa_lib.dir/src/hw3.cpp.o	274382799ad34f10
