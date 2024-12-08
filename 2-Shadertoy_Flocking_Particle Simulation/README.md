@@ -29,23 +29,29 @@ Here are the links to the final submission of my Shadertoy implementation, inclu
 
 ### 1. **Main Animation: Boids**
 [Boids Simulation on Shadertoy](https://www.shadertoy.com/view/mtVBWz)
+![Boids Simulation Screenshot](images/boids_simulation_screenshot.png)
 
 This is the core animation where the boids interact based on the four principles mentioned above.
 
 ### 2. **Bonus: User Interaction**
 - **Boid Size Control**: Users can control the size of the boids by clicking on different screen positions. The boids' size gradually increases as you click from left to right.
   [User Interaction - Boid Size](https://www.shadertoy.com/view/clyfD1)
+  ![Boids Size Control Screenshot](images/boid_size_control_screenshot.png)
 
 - **Boids Follow Mouse Clicks**: The boids will move toward the position where the user clicks on the screen.
   [User Interaction - Follow Mouse Click](https://www.shadertoy.com/view/dtGBDh)
+  ![Boids Follow Mouse Click Screenshot](images/boid_follow_click_screenshot.png)
+
 
 ### 3. **Bonus: Predators**
 In this version, a predator randomly moves within the domain, and the boids flee from it. This adds an extra layer of complexity to the simulation.
 [Predators - Boids Flee](https://www.shadertoy.com/view/DtyfRK)
+![Boids Fleeing Predator Screenshot](images/boid_flee_predator_screenshot.png)
 
 ### 4. **Bonus: 3D Boids**
 This extension simulates boids in 3D space, with updated position and velocity calculations for each boid.
 [3D Boids Simulation](https://www.shadertoy.com/view/dtKBz3)
+![3D Boids Screenshot](images/3d_boids_screenshot.png)
 
 
 ---
