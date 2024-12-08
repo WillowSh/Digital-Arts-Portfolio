@@ -12,8 +12,6 @@ This project showcases my 3D modeling and rendering work created using Blender. 
 
 ---
 
----
-
 ## How to Use
 
 1. **Open the Blender File**:
@@ -49,5 +47,12 @@ This project showcases my 3D modeling and rendering work created using Blender. 
 ### Render of Gold Base Station
 ![Render Example_Gold_Base_Station](outputs/renders/gold_base_station.png)
 
+### Screenshots of Blender
+The following shows some screenshots of the interface working in blender:
+![Blender Example_Donut](outputs/screenshots/screenshot_blender_donut1.png)
+![Blender Example_Donut](outputs/screenshots/screenshot_blender_donut2.png)
+![Blender Example_Gold_Base_Station](outputs/screenshots/screenshot_blender_gold1.png)
+![Blender Example_Gold_Base_Station](outputs/screenshots/screenshot_blender_gold2.png)
+![Blender Example_Gold_Base_Station](outputs/screenshots/screenshot_blender_gold3.png)
 
 
