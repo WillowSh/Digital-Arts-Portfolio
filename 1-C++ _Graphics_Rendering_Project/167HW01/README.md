@@ -25,7 +25,7 @@ This assignment involves rendering a single circle on a canvas using the provide
 ```
 
 **3. Output**
-The rendered images can be viewed in 
+The rendered images can be viewed in: 
 - `outputs/hw_1_1_1.png`![outputs/hw_1_1_1.png](outputs/hw_1_1_1.png)
 - `outputs/hw_1_1_2.png`![outputs/hw_1_1_2.png](outputs/hw_1_1_2.png)
 - `outputs/hw_1_1_3.png`![outputs/hw_1_1_3.png](outputs/hw_1_1_3.png)
