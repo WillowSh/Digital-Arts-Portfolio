@@ -29,6 +29,17 @@ This project is a personal initiative where I explored Unreal Engine 5 (UE5) for
 ### 5. Unity Project
 This folder contains Unity-based projects where I focused on game development, including scene creation, interaction design, and basic gameplay mechanics. Unity was used as a tool to experiment with different approaches to game design and graphics programming.
 
+## Output Details
+
+If you are interested in viewing the output or understanding the results of each project, please refer to the specific `README.md` files located within each project folder. These files provide further details and the expected output in picture. Some `.mp4` videos or other types of files are also mentioned with their `locations` or `links` in the `README` file.
+
+- For the **C++ Graphics Rendering Project**, you can find the detailed descriptions of each assignment and output in the following folders:
+    - `1-C++ _Graphics_Rendering_Project/167HW01`
+    - `1-C++ _Graphics_Rendering_Project/167HW02`
+    - `1-C++ _Graphics_Rendering_Project/167HW03`
+
+Each folder contains a `README.md` that explains how to compile and run the project, and the visual results produced.
+
 ## UCSD CSE167 - Computer Graphics Course
 
 The majority of the projects in this portfolio, specifically **C++ Graphics Rendering Project**, **Shadertoy Flocking Particle Simulation**, and **Blender Works**, were completed as part of the CSE167 - Computer Graphics course at UCSD. This course covered fundamental topics in 3D graphics, including transformations, projection, shading, and animation. For more information about the course, visit [UCSD CSE167 Fall 2023](https://cseweb.ucsd.edu/~tzli/cse167/fa2023/).
