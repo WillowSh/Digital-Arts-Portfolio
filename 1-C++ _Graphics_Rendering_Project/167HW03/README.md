@@ -11,7 +11,7 @@ For Homework 3.1, I created a simple OpenGL window and rendered a solid color ba
 ```bash
 ./balboa -hw 3_1
 ```
-   - The result can be viewed in `outputs/hw_3_1.png`.
+   - The result can be viewed in `outputs/hw_3_1.png`![outputs/hw_3_1.png](outputs/hw_3_1.png).
 ---
 ### **Homework 3.2 - Rendering a Rotating 2D Triangle**
 For Homework 3.2, I rendered a rotating 2D triangle using OpenGL shaders and transformed the triangle in real-time based on time.
@@ -111,10 +111,10 @@ For **Homework 3.4**, I implemented basic lighting effects in the OpenGL rendere
 ```
 **6. Output**
 - The rendered scenes, including basic lighting effects, were captured in screenshots. The output files are saved as:
-  - `outputs/hw_3_4_spheres.png`
-  - `outputs/hw_3_4_teapot.png`
-  - `outputs/hw_3_4_bunny.png`
-  - `outputs/hw_3_4_buddha.png`
+  - `outputs/hw_3_4_spheres.png`,![outputs/hw_3_4_spheres.png](outputs/hw_3_4_spheres.png)
+  - `outputs/hw_3_4_teapot.png`,![outputs/hw_3_4_teapot.png](outputs/hw_3_4_teapot.png)
+  - `outputs/hw_3_4_bunny.png`,![outputs/hw_3_4_bunny.png](outputs/hw_3_4_bunny.png)
+  - `outputs/hw_3_4_buddha.png`,![outputs/hw_3_4_buddha.png](outputs/hw_3_4_buddha.png)
 
 ---
 ### Homework 3.5 -Design My Own Scenes and Render It Using My New Renderer

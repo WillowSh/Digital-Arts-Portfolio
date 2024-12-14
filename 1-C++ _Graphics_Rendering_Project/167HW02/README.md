@@ -50,6 +50,7 @@ The rendered images can be viewed in:
 - Verify anti-aliasing by zooming into the edges of the rendered triangles.
 - Handle edge cases such as degenerate triangles (e.g., all vertices lying on a single line).
 
+---
 ### **Homework 2.2 - Rendering a Single 3D Triangle**
 
 This homework extends the rendering pipeline to handle triangle meshes, a common structure in computer graphics. Unlike a simple list of triangles, a triangle mesh efficiently shares vertices among triangles, reducing storage redundancy.
@@ -145,50 +146,115 @@ The rendered images can be viewed in:
 - `outputs/hw_2_3_1.png`![outputs/hw_2_3_1.png](outputs/hw_2_3_1.png)
 - `outputs/hw_2_3_2.png`![outputs/hw_2_3_2.png](outputs/hw_2_3_2.png)
 - `outputs/hw_2_3_3.png`![outputs/hw_2_3_3.png](outputs/hw_2_3_3.png)
+---
 
+### **Homework 2.4 - 3D Transformations**
+
+In this assignment, we extend the 2D transformations from Homework 1 by implementing 3D transformations. These transformations include scaling, rotation, translation, and more advanced camera operations like `lookAt` and perspective transformations. The goal is to render 3D meshes in a scene with proper transformations applied.
+**1. Key Concepts**
+- Transformations:
+  - **Scaling**: Objects can be scaled along the x, y, and z axes.
+  - **Rotation**: Objects can be rotated about an arbitrary axis.
+  - **Translation**: Objects can be translated in 3D space.
+  - **LookAt Transformation**: This transformation aligns the camera to look at a specific target in the 3D scene, adjusting the camera's position, target, and up vector.
+  - **Perspective Projection**: The projection matrix is applied to simulate the perspective effect on 3D objects as they move away from the camera.
+- Camera Space:
+  - The scene uses a camera space defined by the `cam_to_world` matrix in the `Camera` struct.
+  - The `view matrix` is computed as the inverse of `cam_to_world`.
+- Mesh Rendering:
+  - Meshes are rendered after applying the transformations (model, view, and projection matrices) to project them onto the screen.
+- Scene Format:
+  - A scene is described using a JSON file containing the camera transformations, mesh data (in Stanford PLY format), and other properties.
+  - The camera's transformation is described using a 4x4 transformation matrix, and the `lookAt` operation is applied to adjust the camera view.
+
+![pic_for_readme/spaces_and_transformations_in_3D.png](pic_for_readme/spaces_and_transformations_in_3D.png)
+
+**2. Implementation Details**
+- The function `Image3 hw_2_4(const std::vector<std::string> &params)` in `hw2.cpp` implements the rendering logic. This function renders the scene described in the JSON file. It:
+  - Parses the scene
+  - Applies transformations to the vertices of the meshes using model, view, and projection matrices
+  - Renders the scene into an image with proper depth buffering
+
+- The function `Matrix4x4 parse_transformation(const json &node)` in `hw2_scenes.cpp` parses the transformation sequence from the JSON file and combines them into a single 4x4 transformation matrix. It supports:
+
+  - **Scaling**: Constructs a scaling matrix.
+  - **Rotation**: Constructs a rotation matrix around an arbitrary axis.
+  - **Translation**: Constructs a translation matrix.
+  - **LookAt**: Constructs a view matrix to orient the camera towards a specific target.
+
+**3. Usage**
+- To render a scene with transformations, use the following command:
+
+   ```bash
+  ./balboa -hw 2_4 ../scenes/cube.json
+  ./balboa -hw 2_4 ../scenes/prism.json
+  ./balboa -hw 2_4 ../scenes/teapot.json
+
+   ```
+
+**4. Outputs**
+The rendered images can be viewed in:
+- `outputs/hw_2_4_cube.png`![outputs/hw_2_4_cube.png](outputs/hw_2_4_cube.png)
+- `outputs/hw_2_4_prism.png`![outputs/hw_2_4_prism.png](outputs/hw_2_4_prism.png)
+- `outputs/hw_2_4_teapot.png`![outputs/hw_2_4_teapot.png](outputs/hw_2_4_teapot.png)
 ---
 
 
+***
 
+## Bonus Challenges
 
-## Homework 2.5
+### Homework 2.5 -- Design My Own Scene
 
-1. For homework 2.5, I designed scenes located in "hw_2_5/shark1.json" as the front view, "hw_2_5/shark2.json" as
-   the top view, "hw_2_5/shark3.json" as the side view.
-   The 3D model "shark.ply" is downloaded from "https://people.sc.fsu.edu/~jburkardt/data/ply/ply.html"
-    - My renderings of the scenes can be found at "hw_2_5/hw_2_5_front.png", ![hw_2_5/hw_2_5_front.png](hw_2_5/hw_2_5_front.png)
-      "hw_2_5/hw_2_5_top.png",![hw_2_5/hw_2_5_top.png](hw_2_5/hw_2_5_top.png) "hw_2_5/hw_2_5_side.png",![hw_2_5/hw_2_5_side.png](hw_2_5/hw_2_5_side.png)
-    - You can use "./balboa -hw 2_4 ../scenes/hw2/shark1.json", "./balboa -hw 2_4 ../scenes/hw2/shark2.json", 
-   "./balboa -hw 2_4 ../scenes/hw2/shark3.json" to generate the rendering
+For homework 2.5, I designed scenes located in `hw_2_5/shark1.json` as the **front view**, `hw_2_5/shark2.json` as the **top view**, `hw_2_5/shark3.json` as the **side view**.
+- The 3D model `shark.ply` is downloaded from "https://people.sc.fsu.edu/~jburkardt/data/ply/ply.html"
+- You can use the following command to generate the rendering:
 
-## Homework 2.1 Bonus
+   ```bash
+  ./balboa -hw 2_4 ../scenes/hw2/shark1.json
+  ./balboa -hw 2_4 ../scenes/hw2/shark2.json
+  ./balboa -hw 2_4 ../scenes/hw2/shark3.json
+  ```
+- My renderings of the scenes can be found at
+    - `hw_2_5/hw_2_5_front.png`, ![hw_2_5/hw_2_5_front.png](hw_2_5/hw_2_5_front.png)
+    - `hw_2_5/hw_2_5_top.png`,![hw_2_5/hw_2_5_top.png](hw_2_5/hw_2_5_top.png)
+    - `hw_2_5/hw_2_5_side.png`,![hw_2_5/hw_2_5_side.png](hw_2_5/hw_2_5_side.png)
 
-1. Regarding homework 2.1's "Bonus: triangle clipping (15 pts)"
-   The code you can find at the function "vector<Triangle3> ClipTriangleAgainstNearPlane(const Triangle3& inputTriangle)" in "code/src/hw2.cpp".
-   The code is "bonus_2_1/clip1.png",![bonus_2_1/clip1.png](bonus_2_1/clip1.png)"bonus_2_1/clip2.png",![bonus_2_1/clip2.png](bonus_2_1/clip2.png)
-   "bonus_2_1/clip3.png",![bonus_2_1/clip3.png](bonus_2_1/clip3.png)
+---
+### Homework 2.1 Bonus--"Triangle Clipping"
+
+Regarding homework 2.1's "Bonus: triangle clipping", The code you can find at the function `vector<Triangle3> ClipTriangleAgainstNearPlane(const Triangle3& inputTriangle)` in `code/src/hw2.cpp`.
+- The code is 
+  - `bonus_2_1/clip1.png`,![bonus_2_1/clip1.png](bonus_2_1/clip1.png)
+  - `bonus_2_1/clip2.png`,![bonus_2_1/clip2.png](bonus_2_1/clip2.png)
+  - `bonus_2_1/clip3.png`,![bonus_2_1/clip3.png](bonus_2_1/clip3.png)
    
-   - If one vertex of a triangle is behind th near clipping plane:
-     I use "./balboa -hw 2_1 -s 1 -p0 2 2 -4 -p1 1 0.3 -1 -p2 -2 -2 6 -color 0.8 0.1 0.3 -znear 1e-6" and generate the scene at ![bonus_2_1/hw_2_1_1point.png](bonus_2_1/hw_2_1_1point.png)
-   - If two vertices of a triangle are behind th near clipping plane:
-     I use "./balboa -hw 2_1 -s 1 -p0 2 2 4 -p1 1 0.3 1 -p2 -2 -2 -6 -color 0.8 0.1 0.3 -znear 1e-6" and generate the scene at ![bonus_2_1/hw_2_1_2point.png](bonus_2_1/hw_2_1_2point.png)
-   
+- If one vertex of a triangle is behind th near clipping plane: I use the following command:
+   ```bash
+  ./balboa -hw 2_1 -s 1 -p0 2 2 -4 -p1 1 0.3 -1 -p2 -2 -2 6 -color 0.8 0.1 0.3 -znear 1e-6
+  ```
+- and I generate the scene at `bonus_2_1/hw_2_1_1point.png`, ![bonus_2_1/hw_2_1_1point.png](bonus_2_1/hw_2_1_1point.png)
+- If two vertices of a triangle are behind th near clipping plane: I use the following command:
+   ```bash
+  ./balboa -hw 2_1 -s 1 -p0 2 2 4 -p1 1 0.3 1 -p2 -2 -2 -6 -color 0.8 0.1 0.3 -znear 1e-6
+  ```
+- and I generate the scene at `bonus_2_1/hw_2_1_2point.png`, ![bonus_2_1/hw_2_1_2point.png](bonus_2_1/hw_2_1_2point.png)
 
+---
+### Homework 2.4 Bonus--"Generate an Animation by Interpolating between Transformations"
+For homework 2.4's "Bonus: generate an animation by interpolating between transformations",
+- I use `ffmpeg` to convert a sequence of images of the teapot (Rotate around the up axis, generate one image every 10 degrees of rotation, for a total of 360 degrees).
+- The video file you can find in `bonus_2_4/output.mp4`.
 
-## Homework 2.4 Bonus
+---
+### Homework 2.2 Bonus--"Occlusion Culling"
 
-1. For homework 2.4's "Bonus: generate an animation by interpolating between transformations(15 pts),"
-    - I use ffmpeg to convert a sequence of images of the teapot (Rotate around the up axis, generate one image every 10 degrees of rotation, for a total of 360 degrees).
-    - The video file you can find in "bonus_2_4/output.mp4",![bonus_2_4/output.mp4](bonus_2_4/output.mp4)
-
-## Homework 2.2 Bonus
-
-1. I didn't really implement this bonus, but I study that the idea is to create a MipMap for this image. Taking a 1024x1024 image as an example, 
-   MipMap-level 0 is the image itself. Level 1 combines every 4 pixels into one larger pixel, resulting in a lower-resolution 512x512 image. 
-   Level 2 continues this 4-to-1 operation based on the 512x512 image, and so on. When combining pixels, it is evident that in the HZBOC (Hierarchical Z-Buffer Occlusion Culling),
-   the depth of the four pixels with the highest depth value (the farthest from the viewpoint) is taken as the merged value. 
-   Assuming our Z-buffer has 4 levels, for the triangles that are about to be rendered, we first calculate their bounding box and take the depth value of the vertex with the smallest depth as the "depth."
-   Now, we determine a Mipmap Level, and the method to do so is to make the Mipmap level's pixel size as large as possible (the Mipmap level is as high as possible) 
-   while still meeting the following condition: the long edge of the bounding box must span at least two pixels. Iterate through each pixel inside this bounding box, find the maximum depth value, 
-   and if it is smaller than "depth," then the object is culled, and no further rendering is required. Otherwise, reduce the level and repeat the above test until the lowest level, level 0. 
-   If it still exceeds "depth," then the triangle needs to be rendered.
+I didn't really implement this bonus, but I study that the idea is to create a MipMap for this image. Taking a 1024x1024 image as an example, 
+MipMap-level 0 is the image itself. Level 1 combines every 4 pixels into one larger pixel, resulting in a lower-resolution 512x512 image. 
+Level 2 continues this 4-to-1 operation based on the 512x512 image, and so on. When combining pixels, it is evident that in the HZBOC (Hierarchical Z-Buffer Occlusion Culling),
+the depth of the four pixels with the highest depth value (the farthest from the viewpoint) is taken as the merged value. Assuming our Z-buffer has 4 levels, 
+for the triangles that are about to be rendered, we first calculate their bounding box and take the depth value of the vertex with the smallest depth as the "depth."
+Now, we determine a Mipmap Level, and the method to do so is to make the Mipmap level's pixel size as large as possible (the Mipmap level is as high as possible) 
+while still meeting the following condition: the long edge of the bounding box must span at least two pixels. Iterate through each pixel inside this bounding box, find the maximum depth value, 
+and if it is smaller than "depth," then the object is culled, and no further rendering is required. Otherwise, reduce the level and repeat the above test until the lowest level, level 0. 
+If it still exceeds "depth," then the triangle needs to be rendered.

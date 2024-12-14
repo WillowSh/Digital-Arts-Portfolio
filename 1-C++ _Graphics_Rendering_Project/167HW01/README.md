@@ -227,14 +227,15 @@ The goal of this task is to implement the alpha blending formula to handle multi
 
 ## Bonus Challenges
 
-### Homework 3.3 Bonus--"Camera Rotation Based on Mouse"
-
 ### Homework 1.7 -- Design My Own Scene
 
 For homework 1.7, I designed scenes located in "homework_1_7/miffy.json".
 - My rendering of the scene can be found at "homework_1_7/hw_1_7_miffy.png". ![homework_1_7/hw_1_7_miffy.png](homework_1_7/hw_1_7_miffy.png)
-- You can use `./balboa -hw 1_5 ../scenes/hw1/miffy.json` to generate the rendering
-
+- You can use the following command to generate the rendering:
+   ```bash
+  ./balboa -hw 1_5 ../scenes/hw1/miffy.json
+  ```
+---
 ### Homework 1.2 Bonus--"Accelerating Rasterization Using Bounding Boxes"
 
 Regarding homework 1.2's "Bonus: accelerating rasterization using bounding boxes,"
@@ -246,10 +247,13 @@ Regarding homework 1.2's "Bonus: accelerating rasterization using bounding boxes
   - Its runtime has been reduced to the following: ![bonus_1_2/after_bounding_boxes](bonus_1_2/after_bounding_boxes.png)
 - From the before-and-after comparison, it is evident that using bounding boxes to accelerate the rasterization process can yield a significant performance boost of several times.
 
+---
 ### Homework 1.8 Bonus--"Line and Bézier Curve Rendering"
 
 For homework 1.8's "Bonus: line and Bézier curve rendering (15 pts)," 
 - I made modifications to the code in `src/hw1.cpp`,`src/hw1.h`,`src/hw1_scenes.cpp`,`src/hw1_scenes.h` and `src/main.cpp` to enable the function `Image3 hw_1_8(const std::vector<std::string> &params);`. 
 - I created a scene located at `homework_1_8/line.json`, and the generated image can be found at "homework_1_8/hw_1_8.png". ![homework_1_8/hw_1_8.png](homework_1_8/hw_1_8.png)
-- You can use `./balboa -hw 1_8 ../scenes/hw1/line.json` to generate the rendering.
-
+- You can use the following command to generate the rendering:
+   ```bash
+  ./balboa -hw 1_8 ../scenes/hw1/line.json
+  ```
